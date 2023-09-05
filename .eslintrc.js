@@ -4,7 +4,11 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['airbnb', 'plugin:react/recommended', 'plugin:i18next/recommended'],
+    extends: [
+        'airbnb',
+        'plugin:react/recommended',
+        'plugin:i18next/recommended',
+    ],
     parser: '@typescript-eslint/parser',
     overrides: [
         {
