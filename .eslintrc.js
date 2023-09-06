@@ -15,7 +15,10 @@ module.exports = {
             env: {
                 node: true,
             },
-            files: ['.eslintrc.{js,cjs}'],
+            files: ['.eslintrc.{js,cjs}', '**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
             parserOptions: {
                 sourceType: 'script',
             },
@@ -45,7 +48,12 @@ module.exports = {
         'import/no-extraneous-dependencies': 'warn',
         'no-underscore-dangle': 'off',
         'react/require-default-props': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
     globals: {
